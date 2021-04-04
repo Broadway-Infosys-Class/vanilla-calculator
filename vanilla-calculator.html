@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head> <title>New HTML File</title> </head>
+<link rel="stylesheet" href="./calculator.css"/>
+<body>
+    <div class="main-wrapper">
+        <div class="display-wrapper">
+            <input  type="text" class="display" id= "resultDisplay" />
+        </div>
+        <div class="row">
+            <button onClick="inputNumber('1')">1</button>
+            <button onClick="inputNumber('2')">2</button>
+            <button onClick="inputNumber('3')">3</button>
+            <button onClick="inputNumber('/')">/</button>
+        </div>
+        <div class="row">
+            <button onClick="inputNumber('4')">4</button>
+            <button onClick="inputNumber('5')">5</button>
+            <button onClick="inputNumber('6')">6</button>
+            <button onClick="inputNumber('*')">*</button>
+        </div>
+        <div class="row">
+            <button onClick="inputNumber('7')">7</button>
+            <button onClick="inputNumber('8')">8</button>
+            <button onClick="inputNumber('9')">9</button>
+            <button onClick="inputNumber('-')">-</button>
+        </div>
+        <div class="row">
+            <button onClick="clearInputs()">C</button>
+            <button onClick="inputNumber('0')">0</button>
+            <button onClick="showResult()">=</button>
+            <button onClick="inputNumber('+')">+</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+     var operators = 0;
+    function inputNumber(number){
+        var result = document.getElementById('resultDisplay');
+         if (number == "+" || number == "-" || number == "*" || number == "/") {
+             operators ++; 
+             if (operators == 1) {
+                result.value = result.value + number;
+             } else {
+                 result.value = eval(result.value) + number;
+             }
+         }
+         else {
+             result.value= result.value + number;
+         }
+        
+        
+    }
+
+    function clearInputs() {
+        var result = document.getElementById('resultDisplay');
+        result.value = "";
+    }
+
+    function showResult() {
+        var result = document.getElementById('resultDisplay');
+        result.value = eval(result.value);
+    }
+</script>

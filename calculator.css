@@ -1,0 +1,21 @@
+button {
+    height: 50px;
+    width: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.display {
+    width: 100%;
+    font-size: 25px;
+}
+
+.main-wrapper {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 10px;
+}
